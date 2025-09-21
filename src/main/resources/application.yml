@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: chat-agent
+  ai:
+    openai:
+      api-key: ${OPENAI_API_KEY:}
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:postgres}
+    username: ${DB_USERNAME:postgres}
+    password: ${DB_PASSWORD:123456}
+server:
+  port: 18080
+
+logging:
+  level:
+    org.springframework.ai: DEBUG
+    org.springframework.web.reactive.function.client.ExchangeFunctions: TRACE
+    reactor.netty.http.client: DEBUG
+    reactor.netty.transport: DEBUG
