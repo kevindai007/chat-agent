@@ -9,6 +9,13 @@ spring:
     url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:postgres}
     username: ${DB_USERNAME:postgres}
     password: ${DB_PASSWORD:123456}
+  pgvectordatasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://${PGV_DB_HOST:localhost}:${PGV_DB_PORT:15432}/${PGV_DB_NAME:postgres}
+    username: ${PGV_DB_USERNAME:postgres}
+    password: ${PGV_DB_PASSWORD:123456}
+  main:
+    allow-bean-definition-overriding: true
 server:
   port: 18080
 
@@ -18,3 +25,4 @@ logging:
     org.springframework.web.reactive.function.client.ExchangeFunctions: TRACE
     reactor.netty.http.client: DEBUG
     reactor.netty.transport: DEBUG
+
