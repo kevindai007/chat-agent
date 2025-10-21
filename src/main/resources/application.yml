@@ -16,6 +16,10 @@ spring:
     password: ${PGV_DB_PASSWORD:123456}
   main:
     allow-bean-definition-overriding: true
+  servlet:
+    multipart:
+      max-file-size: 1024MB
+      max-request-size: 1024MB
 server:
   port: 18080
 
